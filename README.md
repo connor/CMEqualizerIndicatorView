@@ -23,6 +23,8 @@ There's also an example project in the repo.
 
 ## Demo
 
+![](http://f.cl.ly/items/2f3z1k3X1m371R0W1w0i/q42rp.gif)
+
 Check out this [video demo](http://cl.ly/403F3U3Y3K1G).
 
 ## Credits
