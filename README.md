@@ -21,6 +21,10 @@ equlizerIndicatorView.tintColor = [NSColor blueColor];
 
 There's also an example project in the repo.
 
+## Demo
+
+Check out this [video demo](http://cl.ly/403F3U3Y3K1G).
+
 ## Credits
 
 CMEqualizerView is a fork of [Alex Givens](http://alexgivens.com)'s [AGEqualizerView](https://github.com/AlexGivens/AGEqualizerIndicatorView) for iOS.
