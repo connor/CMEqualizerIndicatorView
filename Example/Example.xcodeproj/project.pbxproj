@@ -13,9 +13,9 @@
 		B3F6617A1B8E57FC004DAEFA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F661781B8E57FC004DAEFA /* MainMenu.xib */; };
 		B3F661861B8E57FC004DAEFA /* ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F661851B8E57FC004DAEFA /* ExampleTests.m */; };
 		B3F661921B8E5826004DAEFA /* CMEqualizerIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F661911B8E5826004DAEFA /* CMEqualizerIndicatorView.m */; };
-		B3F661951B8E5916004DAEFA /* NSView+NSViewAnimationWithBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F661941B8E5916004DAEFA /* NSView+NSViewAnimationWithBlocks.m */; };
 		B3F661991B8E5AB5004DAEFA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F661971B8E5AB5004DAEFA /* ViewController.m */; };
 		B3F6619A1B8E5AB5004DAEFA /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3F661981B8E5AB5004DAEFA /* ViewController.xib */; };
+		FCF4746F1B99EC0400642A3D /* NSView+NSViewAnimationWithBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF4746E1B99EC0400642A3D /* NSView+NSViewAnimationWithBlocks.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,11 +41,11 @@
 		B3F661851B8E57FC004DAEFA /* ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleTests.m; sourceTree = "<group>"; };
 		B3F661901B8E5826004DAEFA /* CMEqualizerIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMEqualizerIndicatorView.h; sourceTree = "<group>"; };
 		B3F661911B8E5826004DAEFA /* CMEqualizerIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMEqualizerIndicatorView.m; sourceTree = "<group>"; };
-		B3F661931B8E5916004DAEFA /* NSView+NSViewAnimationWithBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+NSViewAnimationWithBlocks.h"; sourceTree = "<group>"; };
-		B3F661941B8E5916004DAEFA /* NSView+NSViewAnimationWithBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+NSViewAnimationWithBlocks.m"; sourceTree = "<group>"; };
 		B3F661961B8E5AB5004DAEFA /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		B3F661971B8E5AB5004DAEFA /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B3F661981B8E5AB5004DAEFA /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		FCF4746D1B99EC0400642A3D /* NSView+NSViewAnimationWithBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+NSViewAnimationWithBlocks.h"; sourceTree = "<group>"; };
+		FCF4746E1B99EC0400642A3D /* NSView+NSViewAnimationWithBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+NSViewAnimationWithBlocks.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,10 +129,10 @@
 		B3F6618F1B8E5819004DAEFA /* CMEqualizerView */ = {
 			isa = PBXGroup;
 			children = (
+				FCF4746D1B99EC0400642A3D /* NSView+NSViewAnimationWithBlocks.h */,
+				FCF4746E1B99EC0400642A3D /* NSView+NSViewAnimationWithBlocks.m */,
 				B3F661901B8E5826004DAEFA /* CMEqualizerIndicatorView.h */,
 				B3F661911B8E5826004DAEFA /* CMEqualizerIndicatorView.m */,
-				B3F661931B8E5916004DAEFA /* NSView+NSViewAnimationWithBlocks.h */,
-				B3F661941B8E5916004DAEFA /* NSView+NSViewAnimationWithBlocks.m */,
 			);
 			name = CMEqualizerView;
 			sourceTree = "<group>";
@@ -239,8 +239,8 @@
 			files = (
 				B3F661751B8E57FC004DAEFA /* main.m in Sources */,
 				B3F661731B8E57FC004DAEFA /* AppDelegate.m in Sources */,
+				FCF4746F1B99EC0400642A3D /* NSView+NSViewAnimationWithBlocks.m in Sources */,
 				B3F661921B8E5826004DAEFA /* CMEqualizerIndicatorView.m in Sources */,
-				B3F661951B8E5916004DAEFA /* NSView+NSViewAnimationWithBlocks.m in Sources */,
 				B3F661991B8E5AB5004DAEFA /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +431,7 @@
 				B3F6618B1B8E57FC004DAEFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B3F6618C1B8E57FC004DAEFA /* Build configuration list for PBXNativeTarget "ExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -439,6 +440,7 @@
 				B3F6618E1B8E57FC004DAEFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
