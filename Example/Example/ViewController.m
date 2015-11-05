@@ -32,4 +32,15 @@
      */
 }
 
+- (IBAction)didClickButton:(id)sender {
+    NSButton *button = (NSButton *)sender;
+    if ([button.title isEqualToString:@"Pause"]) {
+        [self.equalizerView pauseAnimated:YES];
+        button.title = @"Play";
+    } else {
+        [self.equalizerView startAnimated:YES];
+        button.title = @"Pause";
+    }
+}
+
 @end

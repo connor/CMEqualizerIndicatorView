@@ -12,5 +12,6 @@
 @interface ViewController : NSViewController
 
 @property (weak) IBOutlet CMEqualizerIndicatorView *equalizerView;
+@property (weak) IBOutlet NSButton *button;
 
 @end
