@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) NSArray *barArray;
 @property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic) CGFloat pauseHeight;
 
 @end
 
@@ -92,6 +93,7 @@
 
     CGAffineTransform transform = CGAffineTransformMakeRotation(M_PI_2*2);
     self.layer.affineTransform = transform;
+    self.pauseHeight = self.bounds.size.height / 3.5;
 }
 
 - (void)startAnimated:(BOOL)animated {
@@ -162,10 +164,9 @@
     for (int idx = 0; idx < self.barPositions.count; idx++) {
 
         NSImageView *barView = [_barArray objectAtIndex:idx];
-        NSNumber *pausePosition = [_barPositions objectAtIndex:idx];
 
         CGRect rect = barView.frame;
-        rect.size.height = [pausePosition floatValue] * self.bounds.size.height;
+        rect.size.height = self.pauseHeight;
         barView.frame = rect;
 
     }
