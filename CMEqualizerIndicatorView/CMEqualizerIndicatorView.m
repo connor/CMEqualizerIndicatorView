@@ -6,7 +6,6 @@
 //
 
 #import "CMEqualizerIndicatorView.h"
-#import "NSView+NSViewAnimationWithBlocks.h"
 
 #define kEqualizerBarPadding 1.5
 #define kEqualizerAnimationDuration 0.25
@@ -15,6 +14,7 @@
 
 @property (nonatomic, strong) NSArray *barArray;
 @property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic) CGFloat pauseHeight;
 
 @end
 
@@ -70,35 +70,36 @@
 }
 
 - (void)generateBars {
-    
+
     NSMutableArray *tempBarArray = [NSMutableArray arrayWithCapacity:self.barPositions.count];
     float barWidth = (self.bounds.size.width - (kEqualizerBarPadding * 3)) / self.barPositions.count;
-    
+
     for (int idx=0; idx < self.barPositions.count; idx++)  {
-        
+
         float barXCoordinate = idx * barWidth + idx * kEqualizerBarPadding;
         CGRect barFrame = CGRectMake(barXCoordinate, 0, barWidth, 0);
-        
+
         NSImageView *barView = [[NSImageView alloc] initWithFrame:barFrame];
-        
+
         barView.wantsLayer = YES;
         barView.layer.backgroundColor = _tintColor.CGColor;
-        
+
         [self addSubview:barView];
-        
+
         [tempBarArray addObject:barView];
     }
-    
+
     _barArray = [NSArray arrayWithArray:tempBarArray];
-    
+
     CGAffineTransform transform = CGAffineTransformMakeRotation(M_PI_2*2);
     self.layer.affineTransform = transform;
+    self.pauseHeight = self.bounds.size.height / 3.5;
 }
 
 - (void)startAnimated:(BOOL)animated {
-    
+
     if (!animated) [self setAllBarsAtPauseHeights];
-    
+
     if (![_timer isValid]){
         _timer = [NSTimer scheduledTimerWithTimeInterval:kEqualizerAnimationDuration
                                                   target:self
@@ -111,7 +112,7 @@
 
 - (void)pauseAnimated:(BOOL)animated {
     [self killTimers];
-    
+
     if (animated) {
         [NSView animateWithDuration:kEqualizerAnimationDuration
                          animations: ^{
@@ -124,7 +125,7 @@
 
 - (void)stopAnimated:(BOOL)animated {
     [self killTimers];
-    
+
     if (animated) {
         [NSView animateWithDuration:kEqualizerAnimationDuration
                          animations: ^{
@@ -136,7 +137,7 @@
 }
 
 - (void)ticker {
-    
+
     for (NSImageView *barView in _barArray) {
         [NSAnimationContext beginGrouping];
         [[NSAnimationContext currentContext] setDuration:kEqualizerAnimationDuration];
@@ -159,16 +160,15 @@
 }
 
 - (void)setAllBarsAtPauseHeights {
-    
+
     for (int idx = 0; idx < self.barPositions.count; idx++) {
-        
+
         NSImageView *barView = [_barArray objectAtIndex:idx];
-        NSNumber *pausePosition = [_barPositions objectAtIndex:idx];
-        
+
         CGRect rect = barView.frame;
-        rect.size.height = [pausePosition floatValue] * self.bounds.size.height;
+        rect.size.height = self.pauseHeight;
         barView.frame = rect;
-        
+
     }
 }
 
