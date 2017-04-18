@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name                  = "CMEqualizerIndicatorView"
-    s.version               = "1.2"
+    s.version               = "1.3"
     s.summary               = "Indicator view used to represent the play/pause/stop state of audio, compatible with OS X."
     s.license               = { :type => 'MIT', :file => 'LICENSE' }
     s.homepage              = "https://cnnr.me"
